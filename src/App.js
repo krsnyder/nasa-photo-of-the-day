@@ -3,8 +3,11 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import axios from 'axios'
 // import Header from './components/Header'
-import Main from './components/Main'
 // import Footer from './components/Footer'
+import Pod from './components/Pod'
+import Details from './components/Details'
+import background from './Stars.jpg'
+
 const API_KEY = 'FljXaLu5RhVP9OfEF0Kdwk2C7IdnpablRm6fD5J2'
 const BASE_URL = 'https://api.nasa.gov/planetary/apod'
 
@@ -15,17 +18,18 @@ function App() {
     axios.get(`${BASE_URL}?api_key=${API_KEY}`)
       .then(res => {
         setApod(res.data)
-        // console.log(res.data.title)
+        // console.log(res.data)
       })
       .catch(err => {
         debugger
       })
   }, [])
-  
+
   return (
-    <div className="App">
+    <div className="App" style={{ backgroundImage: `url(${background})` }}>
       {/* <Header /> */}
-      <Main apodInfo={apod} />
+      <Pod apodInfo={apod} />
+      <Details apodInfo={apod} />
       {/* <Footer /> */}
     </div>
   );

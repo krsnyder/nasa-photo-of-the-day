@@ -1,8 +1,7 @@
 import React from 'react'
 
-export default function Main(props) {
-  const apodInfo = props
-  const info = (Object.values(apodInfo)[0])
+export default function Pod(props) {
+  const info = props.apodInfo
 
   return (
     <div className='container'>
@@ -13,3 +12,4 @@ export default function Main(props) {
     </div>
   )
 }
+
