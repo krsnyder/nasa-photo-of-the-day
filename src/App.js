@@ -1,35 +1,32 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import axios from 'axios'
-
-// Importing modules
-import Header from './components/Header'
+// import Header from './components/Header'
 import Main from './components/Main'
-import Footer from './components/Footer'
+// import Footer from './components/Footer'
+const API_KEY = 'FljXaLu5RhVP9OfEF0Kdwk2C7IdnpablRm6fD5J2'
+const BASE_URL = 'https://api.nasa.gov/planetary/apod'
 
 function App() {
-const [apod, setApod] = useState(/*Unsure what data will look like*/)
+  const [apod, setApod] = useState({})
 
   useEffect(() => {
-    axios.get(`${/*API CALL*/}`)
+    axios.get(`${BASE_URL}?api_key=${API_KEY}`)
       .then(res => {
-      setApod(res.data)
+        setApod(res.data)
+        // console.log(res.data.title)
       })
       .catch(err => {
         debugger
-    })
-}, [])
-
-
-
-
-
+      })
+  }, [])
+  
   return (
     <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun <span role="img" aria-label='go!'>🚀</span>!
-      </p>
+      {/* <Header /> */}
+      <Main apodInfo={apod} />
+      {/* <Footer /> */}
     </div>
   );
 }
