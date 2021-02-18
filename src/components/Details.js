@@ -1,16 +1,19 @@
 import React from 'react'
+import styled from 'styled-components'
+
+const StyledDetails = styled.div`
+  color: ${pr => pr.theme.secondaryColor};
+  border: 2px solid ${pr => pr.theme.highlight};
+`
 
 export default function Details(props) {
-  const date = props.apodInfo.date
-  const explanation = props.apodInfo.explanation
-  const copyright = props.apodInfo.copyright
+  const { info } = props
 
   return (
-    <div className='container'>
-      <p>{date}</p>
-      <p>{explanation}</p>
-      <p>{copyright}</p>
-    </div>
+    <StyledDetails className='container'>
+      <p>{info.explanation}</p>
+      <p>{info.copyright}</p>
+    </StyledDetails>
   )
 }
 
