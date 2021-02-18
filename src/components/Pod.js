@@ -2,11 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 
 const StyledPod = styled.div`
-  color: ${pr => pr.theme.secondaryColor};
-  // border: 2px solid ${pr => pr.theme.highlight};
+  padding: 5px;
   img {
-    padding: 5px;
-    border: 2px solid ${pr => pr.theme.highlight};
+    box-shadow: 0 4px 6px 0 rgb(34, 60, 80, 0.16);
   }
 `
 

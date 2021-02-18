@@ -1,4 +1,10 @@
 import React, { useState } from 'react'
+import styled from 'styled-components'
+
+const StyledDate = styled.form`
+  color: ${pr => pr.theme.tertiaryColor};
+  margin-bottom: 5vw;
+`
 
 // Date format YYYY-MM-DD
 
@@ -16,7 +22,7 @@ export default function Date(props) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <StyledDate onSubmit={handleSubmit}>
       <label>
         Date:
          <input
@@ -26,6 +32,6 @@ export default function Date(props) {
           onChange={handleDate} />
       </label>
       <input type="submit" value="Submit" />
-    </form>
+    </StyledDate>
   )
 }

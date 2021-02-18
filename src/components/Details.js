@@ -2,8 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 
 const StyledDetails = styled.div`
-  color: ${pr => pr.theme.secondaryColor};
-  border: 2px solid ${pr => pr.theme.highlight};
+  color: ${pr => pr.theme.tertiaryColor};
+  width: 70vw;
+  padding: 10px;
 `
 
 export default function Details(props) {
